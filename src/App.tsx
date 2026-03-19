@@ -6,13 +6,14 @@ const GAMES = [
     title: '猜歌大賽',
     description: '播放音樂片段，搶答歌名！支援文字輸入和選擇題雙模式。',
     howToPlay: [
-      '主持人開「導播室」選題播歌',
-      '玩家聽歌後輸入答案搶分',
+      '建立派對，分享連結給朋友',
+      '每個人手機自動播放音樂',
       '答越快分數越高！',
     ],
     emoji: '🎵',
     color: 'from-amber-500 to-orange-600',
     hoverColor: 'hover:from-amber-400 hover:to-orange-500',
+    partyUrl: '/party',
     playerUrl: '/player',
     hostUrl: '/',
     url: 'https://buzz-voice-poc.onrender.com',
@@ -20,15 +21,16 @@ const GAMES = [
   {
     id: 'draw-and-guess',
     title: '你畫我猜',
-    description: '一人畫圖、其他人猜答案！考驗畫功和默契的派對遊戲。',
+    description: '一人畫圖、其他人猜答案！支援輪流畫和固定畫家兩種模式。',
     howToPlay: [
-      '主持人在管理頁設定題目和隊伍',
-      '畫家看題目在畫布上作畫',
-      '其他玩家看畫猜答案搶分！',
+      '建立派對，選擇畫家模式',
+      '畫家在手機上畫，其他人看即時畫面猜答案',
+      '猜對搶分，全自動推進！',
     ],
     emoji: '🎨',
     color: 'from-sky-500 to-indigo-600',
     hoverColor: 'hover:from-sky-400 hover:to-indigo-500',
+    partyUrl: '/party',
     playerUrl: '/play',
     hostUrl: '/admin',
     url: 'https://draw-and-guess-spring-party.onrender.com',
@@ -90,10 +92,10 @@ function App() {
             {/* Action Buttons */}
             <div className="px-6 pb-6 flex gap-3">
               <a
-                href={game.url + game.playerUrl}
+                href={game.url + game.partyUrl}
                 className={`flex-1 text-center py-3 rounded-xl bg-gradient-to-r ${game.color} ${game.hoverColor} font-bold text-lg transition-all active:scale-95`}
               >
-                加入遊戲
+                派對模式
               </a>
               <a
                 href={game.url + game.hostUrl}
